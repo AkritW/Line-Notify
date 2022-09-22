@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 interface HashMap {
     [key: string]: any
 }
