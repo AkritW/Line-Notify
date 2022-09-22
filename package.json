@@ -1,7 +1,15 @@
 {
-  "name": "line-notify",
+  "name": "simple-line-notify",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AkritW/Simple-Line-Notify"
+  },
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A Simple Package to Simplify working with Line Notify",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
