@@ -14,7 +14,7 @@ const parseToFormUrlEncoded = (jsonObj: HashMap): string => {
     const stringifyFormBody = formBody.join("&");
 
     return stringifyFormBody
-};
+}
 
 class lineNotify {
     private apiKey: string
@@ -29,7 +29,29 @@ class lineNotify {
                 'Authorization': this.apiKey
             },
             body: parseToFormUrlEncoded({ message: msg })
-        });
+        })
+        return res;
+    }
+    async sendImage(msg: string, url: string) {
+        const res = await fetch('https://notify-api.line.me/api/notify', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': this.apiKey
+            },
+            body: parseToFormUrlEncoded({ message: msg, imageThumbnail: url, imageFullsize: url })
+        })
+        return res;
+    }
+    async sendSticker(msg: string, stickerPackageId: number, stickerId: number) {
+        const res = await fetch('https://notify-api.line.me/api/notify', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': this.apiKey
+            },
+            body: parseToFormUrlEncoded({ message: msg, stickerPackageId, stickerId })
+        })
         return res;
     }
 }
