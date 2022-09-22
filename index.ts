@@ -16,7 +16,7 @@ const parseToFormUrlEncoded = (jsonObj: HashMap): string => {
     return stringifyFormBody
 };
 
-const logToLine = async (msg: string, lineApiKey: string): Promise<any> => {    
+const lineNotify = async (msg: string, lineApiKey: string): Promise<any> => {    
     const res = await fetch('https://notify-api.line.me/api/notify', {
         method: 'POST',
         headers: { 
@@ -28,4 +28,4 @@ const logToLine = async (msg: string, lineApiKey: string): Promise<any> => {
     return res;
 }
 
-export default logToLine;
+export default lineNotify;
