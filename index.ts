@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 interface HashMap {
     [key: string]: any
 }
@@ -16,16 +14,22 @@ const parseToFormUrlEncoded = (jsonObj: HashMap): string => {
     return stringifyFormBody
 };
 
-const lineNotify = async (msg: string, lineApiKey: string): Promise<any> => {    
-    const res = await fetch('https://notify-api.line.me/api/notify', {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': lineApiKey
-        },
-        body: parseToFormUrlEncoded({ message: msg })
-    });
-    return res;
+class lineNotify {
+    private apiKey: string
+    constructor(apiKey: string) {
+        this.apiKey = apiKey
+    }
+    async send(msg: string) {
+        const res = await fetch('https://notify-api.line.me/api/notify', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': this.apiKey
+            },
+            body: parseToFormUrlEncoded({ message: msg })
+        });
+        return res;
+    }
 }
 
 export = lineNotify;

@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/AkritW/Simple-Line-Notify"
   },
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "A Simple Lightweight Package to Simplify working with Line Notify",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,12 +20,15 @@
     "url": "https://github.com/AkritW"
   },
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
-    "node-fetch": "2",
+    "node-fetch": "2.6.7",
     "typescript": "^4.8.3"
   },
   "dependencies": {
