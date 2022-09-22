@@ -28,4 +28,4 @@ const lineNotify = async (msg: string, lineApiKey: string): Promise<any> => {
     return res;
 }
 
-export default lineNotify;
+export = lineNotify;

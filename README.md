@@ -1,1 +1,1 @@
-# A Simple Package to Simplify working with Line Notify
+# A Simple Lightweight Package to Simplify working with Line Notify
