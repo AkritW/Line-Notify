@@ -16,7 +16,7 @@ const parseToFormUrlEncoded = (jsonObj: HashMap): string => {
     return stringifyFormBody
 }
 
-class lineNotify {
+class LineNotify {
     private apiKey: string
     constructor(apiKey: string) {
         this.apiKey = apiKey
@@ -56,4 +56,4 @@ class lineNotify {
     }
 }
 
-export = lineNotify;
+export = LineNotify;

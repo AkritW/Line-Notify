@@ -5,12 +5,12 @@
 
 ## Example
 ```javascript
-const lineNotify = require('simple-line-notify')
+const LineNotify = require('simple-line-notify')
 
 const main = async () => {
     // insert API key
-    const lineCommunityGroup = new lineNotify('Bearer xxxxxxxxxxxxxxxxx')
-    const lineDevGroup = new lineNotify('Bearer xxxxxxxxxxxxxxxxxx')
+    const lineCommunityGroup = new LineNotify('Bearer xxxxxxxxxxxxxxxxx')
+    const lineDevGroup = new LineNotify('Bearer xxxxxxxxxxxxxxxxxx')
 
     // send message
     const res1 = await lineDevGroup.send(JSON.stringify({ error: 'Uncaught TypeError: undefined is not a function' }))
